@@ -5,12 +5,25 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link rel="stylesheet" href="library.css">
-    <script src="library.js"></script>
+    <script src="library.js" defer></script>
 </head>
 <body>
     <div id="main">
         <div id="nav">
-            <div id="add">Add new book</div>
+            <div id="add">
+                <dialog class="dialog">
+                    <label for="title">Title</label>
+                    <Input type="text" name="title" id="title">
+                    <label for="author">Author</label>
+                    <input type="text" name="author" id="author">
+                    <label for="pages">Number of pages</label>
+                    <input type="text" name="pages" id="pages">
+                    <label for="status">Already Read</label>
+                    <input type="checkbox" name="status" id="status">
+                    <button autofocus>Close</button>
+                  </dialog>
+                  <button>Add a Book</button>
+            </div>
             <div class="filter"></div>
             <div class="filter"></div>
             <div class="filter"></div>
