@@ -43,7 +43,7 @@ html,body{
     display:grid;
     gap:5px;
     grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(4,3em);
+    grid-template-rows: repeat(4,1fr) 5fr;
     align-items: start;
     justify-items: left;
     padding-top: 5%;
@@ -73,14 +73,14 @@ label{
 
 #unread{
     display: grid;
-    grid-template-columns: repeat(autofill, minmax(200px,1fr));
+    grid-template-rows: repeat(autofit, minmax(250px,250px));
     background-color: blue;
     gap:5px;
 }
 
 #read{
     display: grid;
-    grid-template-columns: repeat(autofill, minmax(200px,1fr));
+    grid-template-columns: repeat(autofit, minmax(250px,250px));
     background-color: green;
     gap:5px;
 }
@@ -96,6 +96,17 @@ label{
 .card{
     height: minmax(100px, 200px);
     width: minmax(100px, 150px);
+    display: grid;
+    grid-template-columns: 3fr 1fr;
+    background-color: bisque;
+}
+
+.cardInfo{
+    display: grid;
+    grid-template-columns: 1fr 2fr;
+    grid-template-rows: repeat(4,1fr) 4fr;
+
+
 }
 
 ::backdrop {
