@@ -2,42 +2,51 @@ html,body{
     height:100%;
     margin:0px;
     box-sizing: border-box;
-}
-
-*{
+ }
+ 
+ 
+ *{
     border: solid black 1px;
-}
-
-
-
-#main{
+ }
+ 
+ 
+ 
+ 
+ 
+ 
+ #main{
     display: grid;
     grid-template-columns: 1fr 3fr;
     background-color: aqua;
     gap:5px;
     height: 100%;
-
-}
-
-#nav{
+ 
+ 
+ }
+ 
+ 
+ #nav{
     display: grid;
     grid-template-rows: 3fr repeat(3,1fr);
     background-color: orange;
     gap:5px;
     padding:5px
-}
-
-.dialog:modal{
+ }
+ 
+ 
+ .dialog:modal{
     display: flex;
     flex-direction: column;
     width:75%;
     height:50%;
     align-items: center;
    justify-content: center;
-
-}
-
-#dialogBody{
+ 
+ 
+ }
+ 
+ 
+ #dialogBody{
     /*height:90%;
     width:95%;*/
     display:grid;
@@ -48,68 +57,82 @@ html,body{
     justify-items: left;
     padding-top: 5%;
     padding-left:10%;
-}
-
-#buttonBox{
+ }
+ 
+ 
+ #buttonBox{
     display: flex;
     flex-direction: row;
     align-items: center;
     justify-content: center;
     gap: 10px;
-}
-
-label{
+ }
+ 
+ 
+ label{
     justify-content: right;
     justify-self: right;
-}
-
-#shelf {
+ }
+ 
+ 
+ #shelf {
     display: grid;
     grid-template-rows: repeat(2,1fr);
     background-color: red;
     gap:5px;
     padding: 5px;
-}
-
-#unread{
+ }
+ 
+ 
+ #unread{
     display: grid;
-    grid-template-rows: repeat(autofit, minmax(250px,250px));
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
     background-color: blue;
     gap:5px;
-}
-
-#read{
+ }
+ 
+ 
+ #read{
     display: grid;
-    grid-template-columns: repeat(autofit, minmax(250px,250px));
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(2,1fr);
     background-color: green;
     gap:5px;
-}
-
-#add{
+ }
+ 
+ 
+ #add{
     background-color: magenta;
-}
-
-.filter{
+ }
+ 
+ 
+ .filter{
     background-color: yellow;
-}
-
-.card{
-    height: minmax(100px, 200px);
-    width: minmax(100px, 150px);
+ }
+ 
+ 
+ .card{
+   /* height: minmax(100px, 200px);
+    width: minmax(100px, 150px);*/
     display: grid;
-    grid-template-columns: 3fr 1fr;
+    grid-template-rows: repeat(4,1fr) 3fr;
     background-color: bisque;
-}
-
-.cardInfo{
-    display: grid;
-    grid-template-columns: 1fr 2fr;
-    grid-template-rows: repeat(4,1fr) 4fr;
-
-
-}
-
-::backdrop {
+    gap: 2px;
+    padding: 2px;
+ }
+ 
+ 
+ .cardData{
+    background-color: rgb(200, 252, 252);
+ 
+ 
+ 
+ 
+ }
+ 
+ 
+ ::backdrop {
     background-image: linear-gradient(
       45deg,
       magenta,
@@ -119,3 +142,5 @@ label{
     );
     opacity: 0.75;
   }
+ 
+ 
