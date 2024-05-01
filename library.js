@@ -21,12 +21,14 @@ closeButton.addEventListener("click", () => {
 });
 
 
-function info(title, author, pages, ready,notes){
+function info(title, author, pages, ready,favorite,notes){
  this.title = title;
  this.author = author;
  this.pages = pages;
  this.ready = ready;
+ this.favorite = favorite;
  this.notes = notes;
+ 
 }
 
 
@@ -35,10 +37,11 @@ function submitInfo() {
  var author = document.getElementById("author").value;
  var pages = document.getElementById("pages").value;
  var ready = document.getElementById("ready").checked;
+ var favorite = document.getElementById("favorite").checked;
  var notes = document.getElementById("notes").value;
 
 
- var book = new info(title,author,pages,ready,notes)
+ var book = new info(title,author,pages,ready,favorite,notes)
  dialog.close();
  console.log("Submit function ran.")
  console.log(book);
@@ -47,6 +50,37 @@ function submitInfo() {
  card = document.createElement("div")
  card.classList.add("card");
  console.log(book.ready)
+
+ cardColumns = document.createElement("div")
+ cardColumns.classList.add("cardColumns")
+ card.appendChild(cardColumns)
+
+ cardButtons = document.createElement("div")
+ cardButtons.classList.add("cardButtons")
+ card.appendChild(cardButtons)
+
+ favDiv = document.createElement("div")
+ favDiv.classList.add("cButton")
+ favDiv.classList.add("favDiv")
+ cardButtons.appendChild(favDiv)
+
+ readDiv = document.createElement("div")
+ readDiv.classList.add("cButton")
+ readDiv.classList.add("readDiv")
+ cardButtons.appendChild(readDiv)
+
+ deleteDiv = document.createElement("div")
+ deleteDiv.classList.add("cButton")
+ deleteDiv.classList.add("deleteDiv")
+ cardButtons.appendChild(deleteDiv)
+
+ favIcon = document.createElement("img")
+ favIcon.src = "star.svg"
+
+ if(book.favorite ===true){
+  console.log("Favorite Book")
+  favDiv.appendChild(favIcon)
+ }
 
 
 
@@ -63,31 +97,31 @@ function submitInfo() {
 
 titleDiv = document.createElement("div");
 titleDiv.classList.add("cardData");
-card.appendChild(titleDiv);
+cardColumns.appendChild(titleDiv);
 titleDiv.innerHTML += `Title: ${title}`;
 
 
 authDiv = document.createElement("div");
 authDiv.classList.add("cardData");
-card.appendChild(authDiv);
+cardColumns.appendChild(authDiv);
 authDiv.innerHTML += `Author: ${author}`;
 
 
 pagesDiv = document.createElement("div");
 pagesDiv.classList.add("cardData");
-card.appendChild(pagesDiv);
+cardColumns.appendChild(pagesDiv);
 pagesDiv.innerHTML += `pages: ${pages}`;
 
 
 readDiv = document.createElement("div");
 readDiv.classList.add("cardData");
-card.appendChild(readDiv);
+cardColumns.appendChild(readDiv);
 readDiv.innerHTML += `Read?: ${ready}`;
 
 
 notesDiv = document.createElement("div");
 notesDiv.classList.add("cardData");
-card.appendChild(notesDiv);
+cardColumns.appendChild(notesDiv);
 notesDiv.innerHTML += `Notes: ${notes}`;
 
 
