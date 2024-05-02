@@ -137,7 +137,7 @@ document.getElementById("title").value = "";
 document.getElementById("author").value = "";
 document.getElementById("pages").value = "";
 document.getElementById("ready").checked = false;
-//ready.checked = false;
+document.getElementById("favorite").checked = false;
 document.getElementById("notes").value = "";
 
 
