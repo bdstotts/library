@@ -1,4 +1,6 @@
-console.log("Hello there!")
+//const svgInjector = require("svg-injector");
+
+library = [];
 
 
 const dialog = document.querySelector("dialog");
@@ -77,6 +79,10 @@ function submitInfo() {
  favIcon = document.createElement("img")
  favIcon.src = "star.svg"
 
+// svgInjector(favIcon);
+
+ 
+
  if(book.favorite ===true){
   console.log("Favorite Book")
   favDiv.appendChild(favIcon)
@@ -124,15 +130,6 @@ notesDiv.classList.add("cardData");
 cardColumns.appendChild(notesDiv);
 notesDiv.innerHTML += `Notes: ${notes}`;
 
-
-
-
-
-
-
-
-
-
 document.getElementById("title").value = "";
 document.getElementById("author").value = "";
 document.getElementById("pages").value = "";
@@ -140,6 +137,10 @@ document.getElementById("ready").checked = false;
 document.getElementById("favorite").checked = false;
 document.getElementById("notes").value = "";
 
+library.push(book);
+
+console.log(library)
+console.log("previous is library")
 
 book = {}
 }
