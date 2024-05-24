@@ -29,7 +29,7 @@ html,body{
  #nav{
     display: grid;
     grid-template-rows: repeat(4,1fr) 6fr;
-    background-color: orange;
+    background-color: rgb(89, 92, 255);
     gap:5px;
     padding:5px
  }
@@ -130,7 +130,7 @@ html,body{
  
  
  .filter{
-    background-color: yellow;
+    background-color: rgb(142, 182, 255);
  }
  
  
